@@ -14,4 +14,9 @@ ca = pd.read_csv("C:/Users/tarik.mahmood/Documents/PYTHON/youtubeCAtrending/CAvi
 # Checking data cols & rows
 ca.shape
 # %%
-# Importing the data source
+# Listing the cols
+ca.columns
+# %%
+# Getting rid of redundant cols.
+ca.drop(['video_id','thumbnail_link', 'description'], axis=1, inplace=True)
+# %%
