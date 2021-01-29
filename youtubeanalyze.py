@@ -34,5 +34,19 @@ ca['publish_time'] = ca['publish_time'].astype('datetime64[ns]')
 ca['trending_date'] = ['20'] + ca['trending_date']
 ca['trending_date'] = pd.to_datetime(ca['trending_date'], format = "%Y.%d.%m")
 # %%
-
+# Calculating the time difference
+ca['time_diff'] = ca['trending_date'] - ca['publish_time']
+# %%
+# Check the new time_diff col
+ca['time_diff'].head()
+# %%
+# Splitting the date and time for col publish time
+print(ca['publish_time'].dt.date[0])
+print(ca['publish_time'].dt.time[0])
+# %%
+ca['title'].head()
+# %%
+# convert all title col texts to lower case
+ca['title'] = ca['title'].str.lower()
+ca['title'].head()
 # %%
