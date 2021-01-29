@@ -50,3 +50,15 @@ ca['title'].head()
 ca['title'] = ca['title'].str.lower()
 ca['title'].head()
 # %%
+# Remving the punctuation from title 
+ca['title'] = ca['title'].str.replace(r'[^\w\s]+', '')
+ca['title'].head()
+# %%
+ca['title'][2]
+# %%
+# Fidning timedelta for time diff col
+ca.time_diff.mean()
+# %%
+# Finding the number of unique channels 
+ca.channel_title.nunique()
+# %%
